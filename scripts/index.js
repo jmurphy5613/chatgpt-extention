@@ -22,23 +22,28 @@ const saveKey = () => {
 
         chrome.storage.local.set({ 'openai-key': encodedKey }, () => {
             document.getElementById('enter-key-container').style.display = 'none'
-            document.getElementById("authed-key-container").style.display = 'block'
+            document.getElementById("authed-key-container").style.display = 'flex'
         })
     }
 }
 
-const changeKey = () => {
-
+const clearKey = () => {
+    chrome.storage.local.set({ 'openai-key': null }, () => {
+        document.getElementById("enter-key-container").style.display = "flex";
+        document.getElementById("authed-key-container").style.display = "none";        
+    })
 }
 
 document
     .getElementById("continue-button")
     .addEventListener("click", saveKey);
 
+document.getElementById('change-key').addEventListener("click", clearKey)
+
 
 checkForKey().then((response) => {
     if (response) {
         document.getElementById("enter-key-container").style.display ="none";
-        document.getElementById("home-title").style.display = "block";
+        document.getElementById("authed-key-container").style.display = "flex";
     }
 });
