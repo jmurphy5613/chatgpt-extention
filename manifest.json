@@ -1,6 +1,6 @@
 {
-  "name": "GPT-3 Writer",
-  "description": "Write a blog post in the style of your favorite thinker anywhere!",
+  "name": "explain it like i'm 5",
+  "description": "get anything explained as if you were a kindergartener",
   "version": "1.0",
   "manifest_version": 3,
   "icons": {
