@@ -11,16 +11,18 @@ const checkForKey = () => {
 };
 
 const saveKey = () => {
-    const input = document.getElementsByClassName("api-key-input");
+    console.log("hey")
+    const input = document.getElementById("api-key-input");
 
     if(input) {
         const { value } = input
+        console.log(value)
 
         const encodedKey = encode(value)
 
         chrome.storage.local.set({ 'openai-key': encodedKey }, () => {
-            document.getElementsByClassName('enter-key-container').style.display = 'none'
-            document.getElementsByClassName("authed-key-container").style.display = 'block'
+            document.getElementById('enter-key-container').style.display = 'none'
+            document.getElementById("authed-key-container").style.display = 'block'
         })
     }
 }
@@ -29,14 +31,14 @@ const changeKey = () => {
 
 }
 
-
 document
-    .getElementsByClassName("continue-button")
+    .getElementById("continue-button")
     .addEventListener("click", saveKey);
+
 
 checkForKey().then((response) => {
     if (response) {
-        document.getElementsByClassName("enter-key-container").style.display ="none";
-        document.getElementsByClassName("home-title").style.display = "block";
+        document.getElementById("enter-key-container").style.display ="none";
+        document.getElementById("home-title").style.display = "block";
     }
 });

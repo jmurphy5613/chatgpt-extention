@@ -5,7 +5,7 @@
     margin: 0;
 }
 
-.enter-key-container {
+#enter-key-container {
     min-width: 400px;
     min-height: 400px;
     background-color: #111;
@@ -15,7 +15,7 @@
     justify-content: center;
 }
 
-.home-title {
+#home-title {
     color: white;
     margin: 0;
     padding: 0;
@@ -25,7 +25,7 @@
     letter-spacing: -4px;
 }
 
-.api-key-input {
+#api-key-input {
     margin-top: 3rem;
     width: 80%;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -38,12 +38,12 @@
     font-size: 1.1rem;
 }
 
-.api-key-input:focus {
+#api-key-input:focus {
     outline: none;
     border-color: rgba(255, 255, 255, 0.75);
 }
 
-.continue-button {
+#continue-button {
     background-color: rgb(255, 79, 18);
     padding: 16px 40px;
     border-radius: 100px;
@@ -55,10 +55,6 @@
     transition: 0.5s ease;
 }
 
-.continue-button:hover {
+#continue-button:hover {
     transform: translateY(-3px);
-}
-
-#key-entereted {
-    display: none;
 }
