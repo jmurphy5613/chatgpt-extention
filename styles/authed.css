@@ -10,7 +10,7 @@
 }
 
 #change-key {
-    margin-top: 5rem;
+    margin-top: 4rem;
 
     background-color: rgb(255, 79, 18);
     padding: 16px 40px;
@@ -35,5 +35,5 @@
 #prompt {
     font-size: 3rem;
     color: darkgray;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 }

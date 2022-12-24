@@ -48,9 +48,8 @@ const generate = async (prompt) => {
 
 }
 
-const createPopup = (content) => {
-    console.log(content.text)
-    chrome.storage.local.set({ data: content.text }, () => {
+const createPopup = (content, propmt) => {
+    chrome.storage.local.set({ data: content.text, prompt: propmt }, () => {
         chrome.windows.create({
             url: "index.html",
             type: "popup",
@@ -64,7 +63,7 @@ const generateCompleteAction = async (info) => {
     try {
         const { selectionText } = info
         const prompt = `write me an explination of ${selectionText} like i'm 5 years old`
-        createPopup(await generate(prompt));
+        createPopup(await generate(prompt), prompt);
         
     } catch (error) {
         console.log(error)

@@ -60,6 +60,10 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 const setContent = async () => {
     const content = await checkForContent()
     document.getElementById("response").innerHTML = content
+
+    var typed = new Typed('.animate', {
+        strings: ["hello world"]
+    })
 }
 
 checkForKey().then((response) => {
