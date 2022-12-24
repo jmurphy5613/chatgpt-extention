@@ -50,7 +50,7 @@ const createPopup = (content, propmt) => {
             url: "index.html",
             type: "popup",
             height: 500,
-            width: 600,
+            width: 650,
         });
     });     
 }
@@ -59,7 +59,7 @@ const generateCompleteAction = async (info) => {
     try {
         const { selectionText } = info
         const prompt = `write me an explination of ${selectionText} like i'm 5 years old`
-        createPopup(await generate(prompt), prompt);
+        createPopup(await generate(prompt), selectionText);
         
     } catch (error) {
         console.log(error)
