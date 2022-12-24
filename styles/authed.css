@@ -10,6 +10,9 @@
 }
 
 #change-key {
+    position: absolute;
+    bottom: 3rem;
+
     background-color: rgb(255, 79, 18);
     padding: 16px 40px;
     border-radius: 100px;
@@ -25,6 +28,7 @@
 
 #response {
     color: white;
-    font-size: 3rem;
+    font-size: 1rem;
     font-family: 'Manrope';
+    width: 80%;
 }

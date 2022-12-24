@@ -58,8 +58,8 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 });
 
 const setContent = async () => {
-    const content = "hey"
-    document.getElementById("response").innerHTML = "hey";
+    const content = await checkForContent()
+    document.getElementById("response").innerHTML = content
 }
 
 checkForKey().then((response) => {
