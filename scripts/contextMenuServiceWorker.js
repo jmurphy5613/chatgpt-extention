@@ -21,30 +21,26 @@ const sendMessage = (content) => {
 }
 
 const generate = async (prompt) => {
-    // const key = await getKey()
-    // const url = "https://api.openai.com/v1/completions"
+    const key = await getKey()
+    const url = "https://api.openai.com/v1/completions"
 
-    // const completionResponse = await fetch(url, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //         Authorization: `Bearer ${key}`
-    //     },
-    //     body: JSON.stringify({
-    //         model: 'text-davinci-003',
-    //         prompt: prompt,
-    //         max_tokens: 100,
-    //         temperature: 0.7
-    //     })
-    // })
+    const completionResponse = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${key}`
+        },
+        body: JSON.stringify({
+            model: 'text-davinci-003',
+            prompt: prompt,
+            max_tokens: 100,
+            temperature: 0.7
+        })
+    })
 
 
-    // const completion = await completionResponse.json()
-    // return completion.choices.pop()
-
-    return {
-        content: "Facebook is a way to stay in touch with your friends and family. It is a website where you can post pictures and stories and see what your friends and family are doing. When you like something, it's like giving a thumbs up to show your friends that you like it."
-    }
+    const completion = await completionResponse.json()
+    return completion.choices.pop()
 
 }
 
