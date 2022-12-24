@@ -1,6 +1,7 @@
 #authed-key-container {
     min-width: 400px;
     min-height: 400px;
+    height: 100%;
     background-color: #111;
     flex-direction: column;
     align-items: center;
@@ -20,4 +21,10 @@
 }
 #change-key:hover {
     transform: translateY(-3px);
+}
+
+#response {
+    color: white;
+    font-size: 3rem;
+    font-family: 'Manrope';
 }

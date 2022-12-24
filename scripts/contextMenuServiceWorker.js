@@ -9,8 +9,19 @@ const getKey = () => {
   });  
 }
 
+const sendMessage = (content) => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        const activeTab = tabs[0].id
+
+        chrome.tabs.sendMessage(
+            activeTab,
+            {message: 'getContent', content},
+        )
+    })
+}
+
 const generate = async (prompt) => {
-    const key = await getKey()
+    const key = 'lol'
     const url = "https://api.openai.com/v1/completions"
 
     const completionResponse = await fetch(url, {
@@ -35,12 +46,27 @@ const generate = async (prompt) => {
 
 const generateCompleteAction = async (info) => {
     try {
+
+        chrome.storage.local.set({ data: "hi" }, () => {
+            chrome.windows.create({
+                url: "index.html",
+                type: "popup",
+                height: 500,
+                width: 600,
+            });
+        });        
         const { selectionText } = info
         const prompt = `write me an explination of ${selectionText} like i'm 5 years old`
+        const res = await generate(prompt)
+
+
+
+        
     } catch (error) {
         console.log(error)
     }
 }
+
 
 chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
