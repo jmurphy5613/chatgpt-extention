@@ -1,6 +1,5 @@
-# buildspace 
-### Welcome 👋
-This is the starter template for the [build your own AI writing assistant w/ GPT-3](https://buildspace.so/builds/ai-writer) project. 
+# explain it like i'm 5
+### Hello there 👋
+This is a chatgpt based browser extention that uses the model devenci-003 to explain concepts as if you were still in kindergarten.
 
-### **Questions?**
-Have some questions make sure you head over to your [buildspace Dashboard](https://buildspace.so/p/build-ai-writing-assistant-gpt3) and link your Discord account so you can get access to helpful channels and your instructor!
+
